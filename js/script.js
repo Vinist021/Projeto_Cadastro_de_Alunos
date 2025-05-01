@@ -1,17 +1,21 @@
+//Máscaras
+$('#inputTelefone').mask('(00) 00000-0000');
+
+//Alunos já cadastrados
 var alunos = [
     {
         id: 1,
         nome: 'Pedro Antônio',
         email: 'pedro.antonio@abutua.com',
-        telefone: '(15)9999-9999',
+        telefone: '(15) 9999-9999',
         idCurso: 1,
         turno: 3
     },
     {
         id: 2,
         nome: 'Maria Francisca',
-        email: 'mariaff@gmail.com',
-        telefone: '(15)1234-5678',
+        email: 'mariafr@gmail.com',
+        telefone: '(15) 1234-5678',
         idCurso: 2,
         turno: 2
     }
@@ -29,7 +33,7 @@ var turnos = [
     {id: 3, nome: 'Noite'}
 ];
 
-//Carregar todos os produtos
+//Carregar todos os alunos
 function loadAlunos() {
     for(let aluno of alunos) {
         addNewRow(aluno);
@@ -42,17 +46,17 @@ function save() {
     const addAluno = 
     {
         id: alunos.length + 1,
-        nome: document.getElementById("inputNome").value,
-        email: document.getElementById("inputEmail").value,
-        telefone: document.getElementById("inputTelefone").value,
-        idCurso: document.getElementById("selectCurso").value,
+        nome: document.getElementById('inputNome').value,
+        email: document.getElementById('inputEmail').value,
+        telefone: document.getElementById('inputTelefone').value,
+        idCurso: document.getElementById('selectCurso').value,
         turno: pegarTurno()
     }
 
     addNewRow(addAluno);
     alunos.push(addAluno);
 
-    document.getElementById("formAlunos").reset();
+    document.getElementById('formAlunos').reset();
 }
 
 function pegarTurno() {
@@ -61,7 +65,7 @@ function pegarTurno() {
   }
 
 function addNewRow(aluno) {
-    var table = document.getElementById("studentsTable");
+    var table = document.getElementById('studentsTable');
 
     var newRow = table.insertRow();
     
