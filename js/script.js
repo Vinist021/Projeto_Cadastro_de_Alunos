@@ -38,10 +38,27 @@ function loadAlunos() {
 
 loadAlunos();
 
-// function save() {
-//     console.log('submit realizado');
+function save() {
+    const addAluno = 
+    {
+        id: alunos.length + 1,
+        nome: document.getElementById("inputNome").value,
+        email: document.getElementById("inputEmail").value,
+        telefone: document.getElementById("inputTelefone").value,
+        idCurso: document.getElementById("selectCurso").value,
+        turno: pegarTurno()
+    }
 
-// }
+    addNewRow(addAluno);
+    alunos.push(addAluno);
+
+    document.getElementById("formAlunos").reset();
+}
+
+function pegarTurno() {
+    const turno = document.querySelector('input[name="gridRadios"]:checked').value;
+    return turno;
+  }
 
 function addNewRow(aluno) {
     var table = document.getElementById("studentsTable");
@@ -49,26 +66,26 @@ function addNewRow(aluno) {
     var newRow = table.insertRow();
     
     //inserir id aluno
-    idNode = document.createTextNode(aluno.id);
+    var idNode = document.createTextNode(aluno.id);
     newRow.insertCell().appendChild(idNode);
 
     //inserir nome aluno
-    nameNode = document.createTextNode(aluno.nome);
+    var nameNode = document.createTextNode(aluno.nome);
     newRow.insertCell().appendChild(nameNode);
 
     //inserir email aluno
-    emailNode = document.createTextNode(aluno.email);
+    var emailNode = document.createTextNode(aluno.email);
     newRow.insertCell().appendChild(emailNode);
 
     //inserir telefone aluno
-    phoneNode = document.createTextNode(aluno.telefone);
+    var phoneNode = document.createTextNode(aluno.telefone);
     newRow.insertCell().appendChild(phoneNode);
 
     //inserir curso aluno
-    courseNode = document.createTextNode(cursos[aluno.idCurso - 1].nome);
+    var courseNode = document.createTextNode(cursos[aluno.idCurso - 1].nome);
     newRow.insertCell().appendChild(courseNode);
 
     //inserir turno aluno
-    shiftNode = document.createTextNode(turnos[aluno.turno - 1].nome);
+    var shiftNode = document.createTextNode(turnos[aluno.turno - 1].nome);
     newRow.insertCell().appendChild(shiftNode);
 }
