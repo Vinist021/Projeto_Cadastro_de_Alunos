@@ -22,8 +22,8 @@ var alunos = [
 ];
 
 var cursos = [
-    {id: 1, nome: 'Angular'},
-    {id: 2, nome: 'Java'},
+    {id: 1, nome: 'Java'},
+    {id: 2, nome: 'Angular'},
     {id: 3, nome: 'SQL'}
 ];
 
@@ -79,7 +79,9 @@ function addNewRow(aluno) {
 
     //inserir email aluno
     var emailNode = document.createTextNode(aluno.email);
-    newRow.insertCell().appendChild(emailNode);
+    var cell = newRow.insertCell();
+    cell.className ='d-none d-md-table-cell';
+    cell.appendChild(emailNode);
 
     //inserir telefone aluno
     var phoneNode = document.createTextNode(aluno.telefone);
