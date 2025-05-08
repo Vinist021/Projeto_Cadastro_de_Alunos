@@ -86,7 +86,7 @@ function addNewRow(aluno) {
     //inserir telefone aluno
     var phoneNode = document.createTextNode(aluno.telefone);
     var cellPhone = newRow.insertCell();
-    cellPhone.className ='d-none d-sm-table-cell';
+    cellPhone.className ='d-none d-sm-table-cell text-nowrap';
     cellPhone.appendChild(phoneNode);
 
     //inserir curso aluno
