@@ -86,14 +86,18 @@ function addNewRow(aluno) {
     //inserir telefone aluno
     var phoneNode = document.createTextNode(aluno.telefone);
     var cellPhone = newRow.insertCell();
-    cellPhone.className = 'text-nowrap';
+    cellPhone.className ='d-none d-sm-table-cell';
     cellPhone.appendChild(phoneNode);
 
     //inserir curso aluno
     var courseNode = document.createTextNode(cursos[aluno.idCurso - 1].nome);
-    newRow.insertCell().appendChild(courseNode);
+    var cellCourse = newRow.insertCell();
+    cellCourse.className = 'd-none d-sm-table-cell'
+    cellCourse.appendChild(courseNode);
 
     //inserir turno aluno
     var shiftNode = document.createTextNode(turnos[aluno.turno - 1].nome);
-    newRow.insertCell().appendChild(shiftNode);
+    var cellShift = newRow.insertCell();
+    cellShift.className = 'd-none d-sm-table-cell'
+    cellShift.appendChild(shiftNode);
 }
